@@ -1,13 +1,126 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#noTodo{
+    font-size: xx-large;
+    color: grey;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+    margin-top: 0;
+    text-align: center;
+    padding-bottom: 20px;
+    min-height: 800px;
+}
+
+#header{
+    background-color: #292F33;
+    padding: 10px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+h1{
+    color: #55ACEE;
+    padding: 10px;
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+.link{
+    color: white;
+    float: left;
+
+}
+
+.navbar ul li a{
+    text-decoration: none;
+} 
+.navbar ul li a:hover{
+    color: #55ACEE;
+} 
+
+li{
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 20px;
+}
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.fontAwesome {
+    font-family: Helvetica, 'FontAwesome', sans-serif;
+  }
+  
+.navbar{
+    background-color: #1c2124;
+    margin-top: 0;
+    padding: 2px;
+}
+
+input{
+    margin: 20px 20px 0 0;
+    padding: 12px 10px;
+    border: 2px solid #FFF105;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 6px 7px 15px -1px rgba(250, 156, 48, 0.83);
+}
+
+#scroll{
+    overflow-y: auto;
+    height: 500px;
+}
+
+button{
+    padding: 15px;
+    background-color: #E1E8ED;
+    border-radius: 5px; 
+    border: 2px solid rgba(230, 178, 6, 0.73);
+    box-shadow: 2px 1px 10px -3px rgba(102, 47, 15, 0.73);
+    width: 100px;
+}
+
+.todo{
+    width: 220px;
+    /* max-width: 500px; */
+    height: 250px;
+    background-color: #ffcc5c;
+    font-size: large;
+    margin: 20px;
+    padding: 10px 10px 0 10px;
+    border: 2px solid #FFF105;
+    border-radius: 10px;
+    box-shadow: 6px 7px 15px -1px rgba(45, 104, 34, 0.83);
+    display: inline-block;
+    align-content: center;
+}
+
+
+.todoDesc{
+    align-content: center;
+    height: 100px;
+    width: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.desc{
+    text-align: center;
+}
+.todo button{
+    float: left;
+    width: 70px;
+}
+.todo .title{
+    font-weight: bolder;
+    font-size: x-large;
+    width: 200px;
+    height: 20px;
+    text-align: center;
 }
