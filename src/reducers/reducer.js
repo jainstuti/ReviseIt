@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const reducer=(state, action) =>{
 switch(action.type){
     case "DELETE_TODO":
@@ -8,6 +10,8 @@ switch(action.type){
             ...state,
             todos: updatedTodos
         }
+        axios.delete("http://localhost:5000/notes/"+action.payload)
+        .then(res=> console.log(res))
         break;
     case "ADD_TODO":
         let updateTodos=[...state.todos, action.payload]
@@ -34,6 +38,12 @@ switch(action.type){
         state={
             ...state,
             todos: newTodos
+        }
+        break;
+    case "INITIALISE_TODOS":
+        state={
+            ...state,
+            todos: action.payload
         }
         break;
     case "MARK_AS_DONE":

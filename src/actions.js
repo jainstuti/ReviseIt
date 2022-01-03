@@ -26,6 +26,13 @@ export function editTodo(todo){
     }
 }
 
+export function initialiseTodos(todos){
+    return {
+        type: "INITIALISE_TODOS",
+        payload: todos
+    }
+}
+
 export function markAsDone(id){
     return {
         type: "MARK_AS_DONE",
