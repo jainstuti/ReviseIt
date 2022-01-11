@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import TodoList from './TodoList';
 import Header from "./Header";
-import NavBar from "./NavBar";
 
 const CompletedTodos=(props)=>{
         return(
@@ -10,7 +9,6 @@ const CompletedTodos=(props)=>{
                 updateSearchField={props.updateSearchField}
                 searchTodos={props.searchTodos} />
                 
-                <NavBar/>
 
                 <TodoList todos={props.todos.filter((todo)=>{
             if(todo.done){

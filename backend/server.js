@@ -19,7 +19,7 @@ connection.once('open', () => {
 })
  
 const notesRouter=require('./routes/notes');
-const authRouter=require('./routes/auth');
+const authRouter=require('./routes/user');
 
 app.use('/notes', notesRouter);
 app.use('/users', authRouter);

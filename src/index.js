@@ -5,6 +5,19 @@ import store from './store';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import "./index.css";
+import axios from 'axios';
+
+// const API = axios.create({ baseURL: "http://localhost:5000" });
+// API.interceptors.request.use((req) => {
+//   console.log("inside interceptor");
+//   if (localStorage.getItem("profile")) {
+//     req.headers.Authorization = `Bearer ${
+//       JSON.parse(localStorage.getItem("profile")).token
+//     }`;
+//   }
+
+//   return req;
+// });
 
 ReactDOM.render(
   <Provider store={store}>

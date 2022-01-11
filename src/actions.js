@@ -39,3 +39,17 @@ export function markAsDone(id){
         payload: id
     }
 }
+
+// export function login(logindata){
+//     return {
+//         type: "LOGIN",
+//         payload: logindata
+//     }
+// }
+
+// export function markAsDone(registerData){
+//     return {
+//         type: "REGISTER",
+//         payload: registerData
+//     }
+// }

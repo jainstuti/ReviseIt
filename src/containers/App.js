@@ -7,7 +7,6 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import IncompleteTodos from '../components/IncompleteTodos';
 import AllTodos from '../components/AllTodos';
 import CompletedTodos from '../components/CompletedTodos';
-import NavBar from '../components/NavBar';
 import SingleTodo from '../components/SingleTodo';
 import axios from 'axios';
 import PrimaryNav from '../components/PrimaryNav';
@@ -17,8 +16,10 @@ import Register from '../components/Register';
 
 class App extends Component{
   componentDidMount(){
-    let all=axios.get('http://localhost:5000/notes')
+    console.log("component mounted");
+    axios.get('http://localhost:5000/notes')
       .then(res=>res.data.map((todo)=>{
+        console.log(res);
         let temp={
             id: todo._id,
             title: todo.title,
@@ -39,6 +40,7 @@ class App extends Component{
         
         <div className='App'>
         <BrowserRouter className="browserRouter">
+
           <PrimaryNav />
           <Routes>
             <Route exact path='/login' element={
@@ -86,6 +88,7 @@ class App extends Component{
               editTodo={this.props.editTodo} deleteTodo={this.props.deleteTodo}
               markAsDone={this.props.markAsDone}
               addTodo={this.props.addTodo}
+              initialiseTodos={this.props.initialiseTodos}
                 updateSearchField={this.props.updateSearchField}
                 searchTodos={this.props.searchTodos} />}
             />

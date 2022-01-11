@@ -1,28 +1,34 @@
 import React, {Component} from "react";
 import Todo from "./Todo";
+// import {useNavigate} from 'react-router-dom';
 
-class TodoList extends Component{
-    render(){
+const TodoList =(props)=>{
+    // render(){
         {
+            // const navigate=useNavigate();
             // {console.log("todolist props", this.props)}
-            if(this.props.todos.length){
+            if(props.todos.length){
                 return(
                     <div>
                     {/* {console.log(this.props.todos)} */}
                         {   
                             
-                            this.props.todos.map((todo) => {
+                            props.todos.map((todo) => {
                                 {/* console.log(todo) */}
-                                if(todo.title.toLowerCase().includes(this.props.searchField.toLowerCase()))
-                                return <Todo key={todo.id} todo={todo} deleteTodo={this.props.deleteTodo} 
-                                editTodo={this.props.editTodo} markAsDone={this.props.markAsDone}/>
+                                if(todo.title.toLowerCase().includes(props.searchField.toLowerCase()))
+                                return <Todo key={todo.id} todo={todo} deleteTodo={props.deleteTodo} 
+                                editTodo={props.editTodo} markAsDone={props.markAsDone}/>
                             })
                         }
                     </div>
                 )
             }
             else{
-                return (<p id='noTodo'>Wohoo! No Todos</p>)
+                if (localStorage.getItem("profile")){
+                    return (<p id='noTodo'>Wohoo! No Todos</p>)
+                }
+                // navigate('/');
+                return (<p id='noTodo'>Please login to see todos</p>)
             }
         }
         
@@ -36,7 +42,7 @@ class TodoList extends Component{
         //         }
         //     </div>
         // )
-    }
+    // }
 }
 
 export default TodoList;
