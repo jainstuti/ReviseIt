@@ -7,17 +7,27 @@ const TodoList =(props)=>{
         {
             // const navigate=useNavigate();
             // {console.log("todolist props", this.props)}
+            var author= true;
             if(props.todos.length){
                 return(
                     <div>
-                    {/* {console.log(this.props.todos)} */}
+                    {/* {console.log("todos")}
+                    {console.log(props.todos)} */}
                         {   
                             
                             props.todos.map((todo) => {
+                                {/* console.log("author")
+                                    console.log(todo.authorId) */}
+                                if(localStorage.getItem('profile')){
+                                    author=JSON.parse(localStorage.getItem('profile')).result._id===todo.authorId
+                                }
                                 {/* console.log(todo) */}
-                                if(todo.title.toLowerCase().includes(props.searchField.toLowerCase()))
-                                return <Todo key={todo.id} todo={todo} deleteTodo={props.deleteTodo} 
-                                editTodo={props.editTodo} markAsDone={props.markAsDone}/>
+                                if(todo.title.toLowerCase().includes(props.searchField.toLowerCase()) && author){
+                                    {/* console.log("todo")
+                                    console.log(todo) */}
+                                    return <Todo key={todo.id} todo={todo} deleteTodo={props.deleteTodo} 
+                                    editTodo={props.editTodo} markAsDone={props.markAsDone}/>
+                                }
                             })
                         }
                     </div>

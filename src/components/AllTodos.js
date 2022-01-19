@@ -7,6 +7,8 @@ import axios from "axios";
 class AllTodos extends Component {
   componentDidMount() {
     // const API = axios.create({ baseURL: "http://localhost:5000" });
+    // console.log("......profile      ");
+    // console.log(JSON.parse(localStorage.getItem('profile')).result._id);
     axios.interceptors.request.use((req) => {
       if (localStorage.getItem("profile")) {
         console.log("inside interceptor");
@@ -16,13 +18,16 @@ class AllTodos extends Component {
       }
 
       return req;
-    });
-    console.log("all mounted");
-    axios.get("http://localhost:5000/notes").then((res) => {
-      console.log("all mounted");
-      console.log(res);
-      // console.log(store);
-    });
+    }, error => {
+      console.log(error);
+      return Promise.reject(error)
+  });
+    // console.log("all mounted");
+    // axios.get("http://localhost:5000/notes").then((res) => {
+    //   console.log("all mounted");
+    //   console.log(res);
+    //   // console.log(store);
+    // });
     // console.log("all mounted");
     // console.log(store);
 

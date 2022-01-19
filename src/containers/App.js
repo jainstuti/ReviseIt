@@ -16,7 +16,7 @@ import Register from '../components/Register';
 
 class App extends Component{
   componentDidMount(){
-    console.log("component mounted");
+    // console.log("component mounted");
     axios.get('http://localhost:5000/notes')
       .then(res=>res.data.map((todo)=>{
         console.log(res);
@@ -24,7 +24,8 @@ class App extends Component{
             id: todo._id,
             title: todo.title,
             desc: todo.desc,
-            done: todo.done
+            done: todo.done,
+            authorId: todo.authorId
         }
         return temp;
       }))

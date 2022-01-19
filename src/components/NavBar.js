@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const NavBar=()=>{
   return(
-    <div className="navbar">
+    <div className="nonprimary-navbar">
       <ul>
         <li> <Link className="link" to="/">All</Link></li>
         <li> <Link className="link" to="/Done">Done</Link></li>

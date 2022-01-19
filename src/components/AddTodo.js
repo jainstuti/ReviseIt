@@ -12,13 +12,17 @@ class AddTodo extends Component{
             axios.post('http://localhost:5000/notes/add', {
                 "title": document.getElementById("title").value,
                 "desc": document.getElementById("desc").value,
-                "done": false
+                "done": false,
+                "authorId": JSON.parse(localStorage.getItem('profile')).result._id
             })
             .then(res=> {
+                // console.log("rest");
+                // console.log(res);
                 this.props.addTodo({id: res.data._id,
                     title: res.data.title,
                     desc: res.data.desc,
-                    done: false
+                    done: false,
+                    authorId: res.data.authorId
                });
             })
 

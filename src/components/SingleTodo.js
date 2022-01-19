@@ -18,9 +18,10 @@ const SingleTodo = (props)=>{
         let status=todo[0].done
         return(
             <div>
-                <h2>{todo[0].title}</h2>
-                <h4>{todo[0].desc}</h4>
-                {status?<p>Done</p>: <p>Incomplete</p>}
+                <h1>{todo[0].title}</h1>
+                <p style={{"font-size": "30px"}}>{todo[0].desc}</p>
+                {status?<h3 style={{"color": "green", "padding-right": "30px","text-align": "right"}}>Done</h3>: 
+                <h3 style={{"color": "red", "padding-right": "30px", "text-align": "right"}}>Incomplete</h3>}
             </div>
         )
 }

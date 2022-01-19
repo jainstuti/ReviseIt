@@ -15,11 +15,17 @@ router.route('/add').post(auth, (req, res) => {
   const title = req.body.title;
   const desc = req.body.desc;
   const done = Boolean(req.body.done);
+  // const authorId = localStorage.getItem('profile')?JSON.parse(localStorage.getItem('profile')).result._id: "";
+  const authorId=req.userId;
+  console.log("idd");
+  console.log(authorId);
+  console.log("idd");
 
   const newNote = new Note({
     title,
     desc,
     done,
+    authorId
   });
 
   newNote.save()
@@ -45,6 +51,7 @@ Note.findById(req.params.id)
     note.title = req.body.title;
     note.desc = req.body.desc;
     note.done = Boolean(req.body.done);
+    note.authorId = req.body.authorId;
 
     note.save()
         .then(() => res.json('Note updated!'))

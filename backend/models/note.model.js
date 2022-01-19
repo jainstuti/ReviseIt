@@ -6,6 +6,7 @@ const noteSchema = new Schema({
   title: { type: String, required: true },
   desc: { type: String},
   done: { type: Boolean, default: false},
+  authorId: {type: String}
 }, {
   timestamps: true,
 });

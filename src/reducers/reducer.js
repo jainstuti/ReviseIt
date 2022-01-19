@@ -51,7 +51,8 @@ switch(action.type){
             let tempTodo={id: todo.id,
                         title: todo.title,
                         desc: todo.desc,
-                        done: todo.done
+                        done: todo.done,
+                        authorId: todo.authorId
                      }
             if(todo.id===action.payload){
                 return {...tempTodo,

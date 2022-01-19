@@ -12,14 +12,16 @@ export const saveState= () => {
             axios.post('http://localhost:5000/notes/update/'+todo.id, {
                 "title": todo.title,
                 "desc": todo.desc,
-                "done": todo.done
+                "done": todo.done,
+                "authorId": todo.authorId
             })
         })
         .catch(err => {
             axios.post('http://localhost:5000/notes',{
                 "title": todo.title,
                 "desc": todo.desc,
-                "done": todo.done
+                "done": todo.done,
+                "authorId": todo.authorId
             })
             // res.status(200).json("handled in catch")
         }

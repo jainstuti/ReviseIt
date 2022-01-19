@@ -33,7 +33,8 @@ export default function FormDialog(props) {
         id: props.id,
         title: title,
         desc: desc, 
-        done: props.done
+        done: props.done,
+        authorId: props.authorId
     }
     props.editTodo(todo)
     setOpen(false);

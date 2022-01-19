@@ -16,9 +16,8 @@ body{
 
 #header{
     background-color: #292F33;
-    padding: 10px;
+    padding: 1px 10px;
     margin-bottom: 0;
-    padding-bottom: 20px;
 }
 
 h1{
@@ -34,10 +33,10 @@ h1{
 
 }
 
-.navbar ul li a{
+.nonprimary-navbar ul li a,.navbar ul li a{
     text-decoration: none;
 } 
-.navbar ul li a:hover{
+.nonprimary-navbar ul li a:hover, .navbar ul li a:hover{
     color: #55ACEE;
 } 
 
@@ -46,17 +45,28 @@ li{
     padding: 10px 10px;
     font-size: 20px;
 }
-.navbar ul{
+.nonprimary-navbar ul, .navbar ul{
     margin: 0;
     padding: 0;
     text-align: left;
     margin-left: 40px;
+}
+.navbar ul{
+    text-align: right;
 }
 
 .fontAwesome {
     font-family: Helvetica, 'FontAwesome', sans-serif;
   }
   
+.nonprimary-navbar{
+    /* background-color: #1c2124; */
+    border-top: 4px solid #1c2124;
+    border-width: 80%;
+    margin: 30px 0 0;
+    padding: 2px;
+    /* margin-bottom: 0; */
+}
 .navbar{
     background-color: #1c2124;
     margin-top: 0;
